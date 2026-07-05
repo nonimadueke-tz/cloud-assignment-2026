@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MackMovies - Download HD Movies</title>
+    <title>MackMovies - Your Ultimate Movie Library</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -81,6 +81,32 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="movie-grid">
+
+            <!-- Movie 4: Avengers: Endgame (NEW ADDITION) -->
+            <div class="movie-card bg-[#1a1a1a] rounded-xl overflow-hidden shadow-xl border border-red-700/50 relative">
+                <span class="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg z-10">
+                    <i class="fas fa-bolt mr-1"></i> New
+                </span>
+                <img src="https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg" 
+                     alt="Avengers Endgame Poster" 
+                     class="w-full h-80 object-cover" />
+                <div class="p-5">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-xl font-bold text-white">Avengers: Endgame</h3>
+                        <span class="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded">2019</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mt-2 line-clamp-2">
+                        After Thanos wipes out half of all life, the remaining Avengers assemble for one final, desperate stand to reverse the snap and restore the universe.
+                    </p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-yellow-400 text-sm"><i class="fas fa-star mr-1"></i> 8.4 / 10</span>
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-1.5 rounded-md text-sm font-medium transition">
+                            <i class="fas fa-download mr-1"></i> Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <!-- Movie 1: Inception -->
             <div class="movie-card bg-[#1a1a1a] rounded-xl overflow-hidden shadow-xl border border-gray-800">
                 <img src="https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg" 
@@ -152,7 +178,7 @@
     <!-- ====== FOOTER ====== -->
     <footer class="bg-[#1a1a1a] border-t border-gray-800 py-8 mt-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
-            <p class="mb-2">&copy; 2026 <span class="text-white font-semibold">MackMovies</span>. Built for film enthusiasts.</p>
+            <p>&copy; 2026 <span class="text-white font-semibold">MackMovies</span>. Your daily dose of cinema.</p>
             <p class="text-xs text-gray-600">All posters are the property of their respective copyright holders. This is a demo project.</p>
         </div>
     </footer>
