@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MackMovies - Download HD Movies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* Smooth hover effects and custom scroll */
+        .movie-card:hover {
+            transform: scale(1.03);
+            transition: transform 0.25s ease-in-out;
+        }
+        .movie-card {
+            transition: transform 0.25s ease-in-out;
+        }
+        body {
+            background-color: #0f0f0f;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== NAVIGATION ====== -->
+    <nav class="bg-[#1a1a1a] border-b border-gray-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-clapperboard text-red-600 text-2xl"></i>
+                    <span class="text-white text-2xl font-bold tracking-tight">Mack<span class="text-red-600">Movies</span></span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-red-500 transition font-medium border-b-2 border-red-600 pb-1">Home</a>
+                    <a href="about.html" class="text-gray-300 hover:text-white transition font-medium">About</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-white transition font-medium">Contact</a>
+                </div>
+                <!-- Mobile Hamburger -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu (hidden by default) -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="index.html" class="block text-white bg-red-600/20 px-3 py-2 rounded-md font-medium">Home</a>
+                <a href="about.html" class="block text-gray-300 hover:bg-gray-800 px-3 py-2 rounded-md">About</a>
+                <a href="contact.html" class="block text-gray-300 hover:bg-gray-800 px-3 py-2 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ====== HERO SECTION ====== -->
+    <section class="relative bg-[#0f0f0f] py-20 md:py-28 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                Unlimited <span class="text-red-600">HD</span> Movies
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl mt-4 max-w-2xl mx-auto">
+                Stream or download the latest blockbusters. Curated just for you by MackMovies.
+            </p>
+            <!-- Search bar (UI only) -->
+            <div class="mt-8 max-w-lg mx-auto flex items-center bg-[#2a2a2a] rounded-full border border-gray-700 p-1">
+                <input type="text" placeholder="Search for a movie..." class="bg-transparent text-white px-4 py-2 w-full focus:outline-none" />
+                <button class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full font-medium transition">
+                    <i class="fas fa-search mr-2"></i> Search
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== MOVIE GRID (INITIAL 3 MOVIES) ====== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="flex justify-between items-center border-b border-gray-800 pb-4 mb-10">
+            <h2 class="text-3xl font-bold text-white">Featured <span class="text-red-600">Collection</span></h2>
+            <span class="text-gray-500 text-sm">3 titles available</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="movie-grid">
+            <!-- Movie 1: Inception -->
+            <div class="movie-card bg-[#1a1a1a] rounded-xl overflow-hidden shadow-xl border border-gray-800">
+                <img src="https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg" 
+                     alt="Inception Poster" 
+                     class="w-full h-80 object-cover" />
+                <div class="p-5">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-xl font-bold text-white">Inception</h3>
+                        <span class="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded">2010</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mt-2 line-clamp-2">
+                        A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea into a CEO's mind.
+                    </p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-yellow-400 text-sm"><i class="fas fa-star mr-1"></i> 8.8 / 10</span>
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-1.5 rounded-md text-sm font-medium transition">
+                            <i class="fas fa-download mr-1"></i> Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Movie 2: The Dark Knight -->
+            <div class="movie-card bg-[#1a1a1a] rounded-xl overflow-hidden shadow-xl border border-gray-800">
+                <img src="https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg" 
+                     alt="The Dark Knight Poster" 
+                     class="w-full h-80 object-cover" />
+                <div class="p-5">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-xl font-bold text-white">The Dark Knight</h3>
+                        <span class="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded">2008</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mt-2 line-clamp-2">
+                        When the menace known as the Joker emerges from his mysterious past, he wreaks chaos on Gotham's streets, pushing Batman to a moral brink.
+                    </p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-yellow-400 text-sm"><i class="fas fa-star mr-1"></i> 9.0 / 10</span>
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-1.5 rounded-md text-sm font-medium transition">
+                            <i class="fas fa-download mr-1"></i> Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Movie 3: Interstellar -->
+            <div class="movie-card bg-[#1a1a1a] rounded-xl overflow-hidden shadow-xl border border-gray-800">
+                <img src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" 
+                     alt="Interstellar Poster" 
+                     class="w-full h-80 object-cover" />
+                <div class="p-5">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-xl font-bold text-white">Interstellar</h3>
+                        <span class="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded">2014</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mt-2 line-clamp-2">
+                        A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival against a dying Earth.
+                    </p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-yellow-400 text-sm"><i class="fas fa-star mr-1"></i> 8.6 / 10</span>
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-1.5 rounded-md text-sm font-medium transition">
+                            <i class="fas fa-download mr-1"></i> Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="bg-[#1a1a1a] border-t border-gray-800 py-8 mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+            <p class="mb-2">&copy; 2026 <span class="text-white font-semibold">MackMovies</span>. Built for film enthusiasts.</p>
+            <p class="text-xs text-gray-600">All posters are the property of their respective copyright holders. This is a demo project.</p>
+        </div>
+    </footer>
+
+    <!-- ====== JAVASCRIPT ====== -->
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Download button alert (demo)
+        document.querySelectorAll('.movie-card button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const movieTitle = btn.closest('.movie-card').querySelector('h3').innerText;
+                alert(`🎬 "${movieTitle}" download link will be available shortly. Stay tuned!`);
+            });
+        });
+    </script>
+</body>
+</html>

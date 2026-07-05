@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - MackMovies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        body { background-color: #0f0f0f; }
+    </style>
+</head>
+<body>
+
+    <!-- ====== NAVIGATION ====== -->
+    <nav class="bg-[#1a1a1a] border-b border-gray-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-clapperboard text-red-600 text-2xl"></i>
+                    <span class="text-white text-2xl font-bold tracking-tight">Mack<span class="text-red-600">Movies</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-white transition font-medium">Home</a>
+                    <a href="about.html" class="text-gray-300 hover:text-white transition font-medium">About</a>
+                    <a href="contact.html" class="text-white hover:text-red-500 transition font-medium border-b-2 border-red-600 pb-1">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="index.html" class="block text-gray-300 hover:bg-gray-800 px-3 py-2 rounded-md">Home</a>
+                <a href="about.html" class="block text-gray-300 hover:bg-gray-800 px-3 py-2 rounded-md">About</a>
+                <a href="contact.html" class="block text-white bg-red-600/20 px-3 py-2 rounded-md font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ====== CONTACT FORM ====== -->
+    <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="bg-[#1a1a1a] p-8 md:p-12 rounded-2xl border border-gray-800 shadow-2xl">
+            <h1 class="text-3xl font-bold text-white mb-2">Get in <span class="text-red-600">Touch</span></h1>
+            <p class="text-gray-400 mb-8">Have a movie suggestion or feedback? We'd love to hear from you.</p>
+
+            <form id="contact-form" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+                    <input type="text" id="name" required 
+                           class="w-full bg-[#2a2a2a] border border-gray-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-red-600 focus:border-transparent outline-none transition" 
+                           placeholder="e.g. John Carter" />
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+                    <input type="email" id="email" required 
+                           class="w-full bg-[#2a2a2a] border border-gray-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-red-600 focus:border-transparent outline-none transition" 
+                           placeholder="you@example.com" />
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                    <textarea id="message" rows="5" required 
+                              class="w-full bg-[#2a2a2a] border border-gray-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-red-600 focus:border-transparent outline-none transition" 
+                              placeholder="Tell us about your favorite movies..."></textarea>
+                </div>
+                <button type="submit" 
+                        class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition duration-200 text-lg shadow-lg shadow-red-600/20">
+                    <i class="fas fa-paper-plane mr-2"></i> Send Message
+                </button>
+            </form>
+
+            <div class="mt-10 pt-8 border-t border-gray-800 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                <div>
+                    <i class="fas fa-map-marker-alt text-red-500 text-xl"></i>
+                    <p class="text-gray-400 text-sm mt-1">Arusha, TZ</p>
+                </div>
+                <div>
+                    <i class="fas fa-envelope text-red-500 text-xl"></i>
+                    <p class="text-gray-400 text-sm mt-1">support@mackmovies.dev</p>
+                </div>
+                <div>
+                    <i class="fas fa-phone text-red-500 text-xl"></i>
+                    <p class="text-gray-400 text-sm mt-1">+255 789 294 663</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="bg-[#1a1a1a] border-t border-gray-800 py-8 mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+            <p>&copy; 2026 <span class="text-white font-semibold">MackMovies</span>. Built for film enthusiasts.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Contact form submit handler
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            const name = document.getElementById('name').value.trim();
+            alert(`✅ Thanks for reaching out, ${name}! The MackMovies team will respond to you shortly.`);
+            this.reset(); 
+        });
+    </script>
+</body>
+</html>
